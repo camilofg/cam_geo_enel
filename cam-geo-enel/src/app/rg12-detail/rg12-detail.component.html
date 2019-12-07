@@ -1,0 +1,32 @@
+<form>
+    <div>
+        <br>
+        <label>Movimiento: </label>
+        <select id="movimiento" name="movimiento" [(ngModel)]="rg12.movimiento" class="form-control" placeholder="Movimiento">
+            <option value="EXPANSION">EXPANSION</option>
+            <option value="REPOSICION">REPOSICION</option>
+            <option value="RETIRO">RETIRO</option>
+        </select>
+        <label>Unidad Responsable:</label>
+            <input [(ngModel)]="rg12.unidad_responsable" placeholder="Unidad Responsable" name="unidad_responsable"/> 
+        <br>
+        <label>Proyecto:</label>
+        <select id="proyecto" name="proyecto" [(ngModel)]="rg12.project" class="form-control" placeholder="Proyecto" value="">
+            <option value="" selected="selected">--Select Project--</option>
+            <option *ngFor="let project of ProjectItems" [value]="project.Id">
+                {{project.description}}
+            </option>
+        </select>
+        <!-- <label>Priority: </label>
+        <select id="priorities" name="priorities" [(ngModel)]="item.PriorityId" class="form-control" placeholder="Priority">
+            <option *ngFor="let priority of Priorities" [value]="priority.PriorityId">
+                {{priority.Description}}
+            </option>
+            </select>
+        </div> 
+        <br>
+        <button (click)="goBack()">Back</button>
+        <button (click)="save()">Save</button> -->
+    </div>
+</form>
+          

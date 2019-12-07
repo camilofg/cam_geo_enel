@@ -1,0 +1,364 @@
+<p>rg12 works!</p>
+
+<div class="panel panel-primary" *ngIf="listRg12">
+    <div class="panel-heading">
+        <h2>Items List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movimiento</th>
+                    <th>Unidad Responsable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listRg12">
+                    <td>{{item.movimiento}}</td>
+                    <td>{{item.unidad_responsable}}</td>
+                </tr>
+            </tbody>
+            <br>
+            <button (click)="addItem()">New Item</button>
+        </table>
+    </div>
+</div>
+<!-- 
+<div >
+    
+    <fieldset class="module aligned ">
+          <div class="form-row field-movimiento">
+                  <div>
+                          <label class="required" for="id_movimiento">Movimiento:</label>
+                              <select name="movimiento" id="id_movimiento">
+    <option value="EXPANSION">EXPANSION</option>
+    <option value="REPOSICION" selected="">REPOSICION</option>
+    <option value="RETIRO">RETIRO</option>
+  </select>
+                  </div>
+          </div>
+          <div class="form-row field-unidad_responsable">
+                  <div>
+                          <label class="required" for="id_unidad_responsable">Unidad responsable:</label>
+                              <input type="text" name="unidad_responsable" value="prueba registro rg12" class="vTextField" maxlength="100" required="" id="id_unidad_responsable">
+                  </div>
+          </div>
+          <div class="form-row field-no_descargo_pdl">
+                  <div>
+                          <label class="required" for="id_no_descargo_pdl">No descargo pdl:</label>
+                              <input type="text" name="no_descargo_pdl" value="3234cc342" class="vTextField" maxlength="100" required="" id="id_no_descargo_pdl">
+                  </div>
+          </div>
+          <div class="form-row field-fecha_ejecucion">
+                  <div>
+                          <label class="required" for="id_fecha_ejecucion">Fecha ejecucion:</label>
+                              <input type="text" name="fecha_ejecucion" value="2019-12-07" class="vDateField" size="10" required="" id="id_fecha_ejecucion"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+                  <br><span class="timezonewarning">Note: You are 5 hours behind server time.</span></div>
+          </div>
+          <div class="form-row field-proyecto">
+                  <div>
+                          <label class="required" for="id_proyecto">Proyecto:</label>
+                              <div class="related-widget-wrapper">
+      <select name="proyecto" required="" id="id_proyecto">
+    <option value="">---------</option>
+    <option value="1" selected="">Proyecto object (1)</option>
+  </select>
+          <a class="related-widget-wrapper-link change-related" id="change_id_proyecto" data-href-template="/admin/rest_api/proyecto/__fk__/change/?_to_field=id&amp;_popup=1" title="Change selected proyecto" href="/admin/rest_api/proyecto/1/change/?_to_field=id&amp;_popup=1"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_proyecto" href="/admin/rest_api/proyecto/add/?_to_field=id&amp;_popup=1" title="Add another proyecto"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+  </div>
+                  </div>
+          </div>
+          <div class="form-row field-gom">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_gom">Gom:</label>
+                          
+                              <input type="text" name="gom" value="3234324" class="vTextField" maxlength="100" required="" id="id_gom">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-circuito">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_circuito">Circuito:</label>
+                          
+                              <div class="related-widget-wrapper">
+      <select name="circuito" required="" id="id_circuito">
+    <option value="">---------</option>
+  
+    <option value="1" selected="">Circuito object (1)</option>
+  
+  </select>
+      
+          <a class="related-widget-wrapper-link change-related" id="change_id_circuito" data-href-template="/admin/rest_api/circuito/__fk__/change/?_to_field=id&amp;_popup=1" title="Change selected circuito" href="/admin/rest_api/circuito/1/change/?_to_field=id&amp;_popup=1"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_circuito" href="/admin/rest_api/circuito/add/?_to_field=id&amp;_popup=1" title="Add another circuito"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+      
+  </div>
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-punto_fisico">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_punto_fisico">Punto fisico:</label>
+                          
+                              <input type="text" name="punto_fisico" value="232434" class="vTextField" maxlength="30" required="" id="id_punto_fisico">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-coord_x">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_coord_x">Coord x:</label>
+                          
+                              <input type="number" name="coord_x" value="23.434230" step="0.000001" required="" id="id_coord_x">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-coord_y">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_coord_y">Coord y:</label>
+                          
+                              <input type="number" name="coord_y" value="23.876000" step="0.000001" required="" id="id_coord_y">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-norma">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_norma">Norma:</label>
+                          
+                              <input type="text" name="norma" value="la3122" class="vTextField" maxlength="25" required="" id="id_norma">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-material">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_material">Material:</label>
+                          
+                              <input type="text" name="material" value="Metalico" class="vTextField" maxlength="50" required="" id="id_material">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-altura">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_altura">Altura:</label>
+                          
+                              <input type="number" name="altura" value="14" class="vIntegerField" required="" id="id_altura">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-carga_rotura">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_carga_rotura">Carga rotura:</label>
+                          
+                              <input type="number" name="carga_rotura" value="750" class="vIntegerField" required="" id="id_carga_rotura">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-cantidad_circuitos">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_cantidad_circuitos">Cantidad circuitos:</label>
+                          
+                              <input type="number" name="cantidad_circuitos" value="2" class="vIntegerField" required="" id="id_cantidad_circuitos">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-puesta_tierra">
+              
+              
+                  <div class="checkbox-row">
+                      
+                      
+                          <input type="checkbox" name="puesta_tierra" id="id_puesta_tierra"><label class="vCheckboxLabel" for="id_puesta_tierra">Puesta tierra</label>
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-material_cable_guarda">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_material_cable_guarda">Material cable guarda:</label>
+                          
+                              <input type="text" name="material_cable_guarda" value="Acero" class="vTextField" maxlength="100" required="" id="id_material_cable_guarda">
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-zona">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_zona">Zona:</label>
+                          
+                              <select name="zona" id="id_zona">
+    <option value="URBANO" selected="">URBANO</option>
+  
+    <option value="RURAL">RURAL</option>
+  
+  </select>
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-propiedad">
+              
+              
+                  <div>
+                      
+                      
+                          <label class="required" for="id_propiedad">Propiedad:</label>
+                          
+                              <select name="propiedad" id="id_propiedad">
+    <option value="CLIENTE">CLIENTE</option>
+  
+    <option value="CODENSA" selected="">CODENSA</option>
+  
+  </select>
+                          
+                      
+                      
+                  </div>
+              
+          </div>
+      
+          <div class="form-row field-operacion">
+              
+              
+                  <div class="checkbox-row">
+                      
+                      
+                          <input type="checkbox" name="operacion" id="id_operacion" checked=""><label class="vCheckboxLabel" for="id_operacion">Operacion</label>
+                      
+                      
+                  </div>
+              
+          </div>
+      
+  </fieldset>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="submit-row">
+  
+  <input type="submit" value="Save" class="default" name="_save">
+  
+      
+      <p class="deletelink-box"><a href="/admin/rest_api/rg12/4/delete/" class="deletelink">Delete</a></p>
+  
+  
+  <input type="submit" value="Save and add another" name="_addanother">
+  <input type="submit" value="Save and continue editing" name="_continue">
+  
+  
+  </div>
+  
+  
+  
+      <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
+      </script>
+  
+  
+  
+  
+  <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+  </script>
+  
+  
+  </div> -->
